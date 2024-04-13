@@ -8,6 +8,7 @@ async function getCepData(cep, id) {
     .then((response) => response.json())
     .then((data) => {
         htmlDiv = document.querySelector("#"+id);
+        htmlDiv.querySelector(".accordion-body").innerHTML = "";
         htmlDiv.querySelector(".accordion-body").appendChild(document.createTextNode(data.logradouro + " / " + data.localidade + " - " + data.uf));
     });
 }
